@@ -4,6 +4,8 @@ Is the GGUF model you downloaded still using its official chat template? This ch
 
 Every GGUF file carries its own copy of the model's chat template, frozen on the day the file was made. Model authors keep fixing their templates after release, and the copies on Hugging Face don't update. I looked at 1,788 GGUF uploads of six popular models, and for four of them most downloads get a template that differs from the official one today. Sometimes that's harmless. Sometimes it crashes your app the first time the model calls a tool, or quietly drops the tools from the prompt.
 
+The full write-up is on Medium: [Your AI Model Isn't Broken. The File You Downloaded Is Out of Date.](https://medium.com/@vanshaj.kakkar/your-ai-model-isnt-broken-the-file-you-downloaded-is-out-of-date-bfc36a6a3ea9)
+
 ## Check your model
 
 You need [uv](https://docs.astral.sh/uv/). Nothing else to install.
