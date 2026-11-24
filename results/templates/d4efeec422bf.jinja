@@ -1,0 +1,20 @@
+{%- if messages[0]['role'] == 'system' %}
+    {{- '<|im_start|>system
+' + messages[0]['content'] + '<|im_end|>
+' }}
+{%- else %}
+    {{- '<|im_start|>system
+<|im_end|>
+' }}
+{%- endif %}
+{%- for message in messages %}
+    {%- if (message.role == 'user') or (message.role == 'system' and not loop.first) or (message.role == 'assistant') %}
+        {{- '<|im_start|>' + message.role + '
+' + message.content + '<|im_end|>' + '
+' }}
+    {%- endif %}
+{%- endfor %}
+{%- if add_generation_prompt %}
+    {{- '<|im_start|>assistant
+' }}
+{%- endif %}

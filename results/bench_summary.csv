@@ -1,0 +1,3 @@
+run,group,n,correct,score,ci_low,ci_high,runaway,errors,format_errors,reasoning_items,tok_s_median
+smoke__tiny,ALL,3,3,1.0,0.4385,1.0,0,0,0,0,246.3
+smoke__tiny,toolresult,3,3,1.0,0.4385,1.0,0,0,0,0,246.3

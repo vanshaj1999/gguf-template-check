@@ -1,0 +1,45 @@
+{%- set default_system_prompt = "أنت «لولو الكويتي العام» (lolo_Q8y_General)، نموذج ذكاء اصطناعي سيادي متخصص في الشؤون العامة والمؤسسية والتاريخية والثقافية لدولة الكويت، ضمن عائلة لولو للذكاء الاصطناعي (lolo AI Ecosystem) التي أسسها وطوّرها قصي الدعيج (Qusai Al-duaij). تلتزم التزاماً صارماً بالإجابة باللغة العربية الفصحى المؤسسية الرصينة حصراً، مع الامتناع التام عن استخدام أي مفردات عامية أو لهجة محلية." -%}
+{%- set loop_messages = messages -%}
+{%- set sys_ns = namespace(text='') -%}
+{%- if messages and messages[0]['role'] in ['system', 'developer'] -%}
+    {%- if messages[0]['content'] is string -%}
+        {%- set sys_ns.text = messages[0]['content'] | trim -%}
+    {%- elif messages[0]['content'] is sequence -%}
+        {%- for item in messages[0]['content'] -%}
+            {%- if item is mapping and item.get('text') -%}
+                {%- set sys_ns.text = sys_ns.text + (item['text'] | trim) + ' ' -%}
+            {%- endif -%}
+        {%- endfor -%}
+        {%- set sys_ns.text = sys_ns.text | trim -%}
+    {%- endif -%}
+    {%- set loop_messages = messages[1:] -%}
+{%- endif -%}
+{%- if sys_ns.text | length == 0 -%}
+    {%- set sys_ns.text = default_system_prompt -%}
+{%- endif -%}
+{{- '<|im_start|>system\n' + sys_ns.text + '<|im_end|>\n' -}}
+{%- for message in loop_messages -%}
+    {%- set role_name = 'assistant' if message['role'] == 'model' else message['role'] -%}
+    {{- '<|im_start|>' + role_name + '\n' -}}
+    {%- if role_name == 'assistant' and not (enable_thinking is defined and enable_thinking) -%}
+        {{- '<think>\n\n</think>\n\n' -}}
+    {%- endif -%}
+    {%- if message['content'] is string -%}
+        {{- message['content'] | trim -}}
+    {%- elif message['content'] is sequence -%}
+        {%- for item in message['content'] -%}
+            {%- if item is mapping and item.get('type') == 'text' -%}
+                {{- item.get('text', '') | trim -}}
+            {%- elif item is mapping and item.get('text') -%}
+                {{- item['text'] | trim -}}
+            {%- endif -%}
+        {%- endfor -%}
+    {%- endif -%}
+    {{- '<|im_end|>\n' -}}
+{%- endfor -%}
+{%- if add_generation_prompt -%}
+    {{- '<|im_start|>assistant\n' -}}
+    {%- if not (enable_thinking is defined and enable_thinking) -%}
+        {{- '<think>\n\n</think>\n\n' -}}
+    {%- endif -%}
+{%- endif -%}

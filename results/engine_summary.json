@@ -1,0 +1,73 @@
+{
+ "Qwen/Qwen3-8B": {
+  "python": {
+   "crash": 0.8429735311935052,
+   "same": 0.15698910369850969,
+   "no_template": 2.623507581936912e-05,
+   "different": 1.113003216579296e-05
+  },
+  "llama": {
+   "same": 0.9999626348920149,
+   "no_template": 2.623507581936912e-05,
+   "different": 1.113003216579296e-05
+  },
+  "downloads_30d": 1257858
+ },
+ "Qwen/Qwen3.8-27B": {
+  "python": {
+   "same": 0.9999460857961943,
+   "no_template": 5.39142038056906e-05
+  },
+  "llama": {
+   "same": 0.9999460857961943,
+   "no_template": 5.39142038056906e-05
+  },
+  "downloads_30d": 13799703
+ },
+ "Qwen/Qwen2.5-7B-Instruct": {
+  "python": {
+   "different": 0.7039372864348191,
+   "same": 0.29602799759963894,
+   "no_template": 3.4715965541924485e-05
+  },
+  "llama": {
+   "different": 0.7039372864348191,
+   "same": 0.29602799759963894,
+   "no_template": 3.4715965541924485e-05
+  },
+  "downloads_30d": 1209818
+ },
+ "mistralai/Mistral-7B-Instruct-v0.3": {
+  "python": {
+   "crash": 0.9713022733651417,
+   "same": 0.028697726634858266
+  },
+  "llama": {
+   "crash": 0.9713022733651417,
+   "same": 0.028697726634858266
+  },
+  "downloads_30d": 85512
+ },
+ "microsoft/Phi-4-mini-instruct": {
+  "python": {
+   "same": 1.0
+  },
+  "llama": {
+   "same": 1.0
+  },
+  "downloads_30d": 283220
+ },
+ "openai/gpt-oss-20b": {
+  "python": {
+   "different": 0.6167174986030918,
+   "same": 0.38282767474656093,
+   "no_template": 0.00045482665034723144
+  },
+  "llama": {
+   "different": 0.6167174986030918,
+   "same": 0.38282767474656093,
+   "no_template": 0.00045482665034723144
+  },
+  "downloads_30d": 1202656
+ }
+}

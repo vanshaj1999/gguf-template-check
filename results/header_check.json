@@ -1,0 +1,102 @@
+[
+ {
+  "repo": "Qwen/Qwen3-8B-GGUF",
+  "file": "Qwen3-8B-Q4_K_M.gguf",
+  "match": true
+ },
+ {
+  "repo": "unsloth/Qwen3-8B-GGUF",
+  "file": "Qwen3-8B-Q4_K_M.gguf",
+  "match": true
+ },
+ {
+  "repo": "Qwen/Qwen2.5-7B-Instruct-GGUF",
+  "file": "qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+  "match": true
+ },
+ {
+  "repo": "lmstudio-community/Mistral-7B-Instruct-v0.3-GGUF",
+  "file": "Mistral-7B-Instruct-v0.3-Q4_K_M.gguf",
+  "match": true
+ },
+ {
+  "repo": "unsloth/gpt-oss-20b-GGUF",
+  "file": "gpt-oss-20b-Q4_K_M.gguf",
+  "match": true
+ },
+ {
+  "repo": "ggml-org/gpt-oss-20b-GGUF",
+  "file": "eagle3-gpt-oss-20b-Q8_0.gguf",
+  "match": true
+ },
+ {
+  "repo": "Xylolabs/Qwen2.5-7B-Instruct-GGUF",
+  "file": "Qwen2.5-7B-Instruct-Q4_K_M.gguf",
+  "match": true
+ },
+ {
+  "repo": "JulianChang/Qwen3-8B-Q8_0-GGUF",
+  "file": "qwen3-8b-q8_0.gguf",
+  "match": true
+ },
+ {
+  "repo": "EnlistedGhost/Qwen3-8B-GGUF",
+  "file": "Qwen3-8B-Q4_K_M.gguf",
+  "match": true
+ },
+ {
+  "repo": "second-state/gpt-oss-20b-GGUF",
+  "file": "gpt-oss-20b-MXFP4_MOE.gguf",
+  "match": true
+ },
+ {
+  "repo": "tripolskypetr/Qwen2.5-7B-Instruct-GGUF",
+  "file": "Qwen2.5-7B-Instruct-Q4_K_M.gguf",
+  "match": true
+ },
+ {
+  "repo": "hldp-05/Mistral-7B-Instruct-v0.3-Q4_K_M-GGUF",
+  "file": "mistral-7b-instruct-v0.3-q4_k_m.gguf",
+  "match": true
+ },
+ {
+  "repo": "s3dev-ai/Mistral-7B-Instruct-v0.3-gguf",
+  "file": "Mistral-7B-Instruct-v0.3-Q4_K_M.gguf",
+  "match": true
+ },
+ {
+  "repo": "VladimirRH/Phi-4-mini-instruct-Q4_K_M-GGUF",
+  "file": "model-Q4_K_M.gguf",
+  "match": true
+ },
+ {
+  "repo": "rizkyramadhana26/Qwen2.5-7B-Instruct-Q8_0-GGUF",
+  "file": "qwen2.5-7b-instruct-q8_0.gguf",
+  "match": true
+ },
+ {
+  "repo": "IlSignorMaster/Qwen3.8-27B-GGUF",
+  "file": "Qwen3.8-27B-UD-Q4_K_M.gguf",
+  "match": true
+ },
+ {
+  "repo": "hanchen1145/Qwen3.8-27B-GGUF",
+  "file": "Qwen3.8-27B-UD-Q4_K_M.gguf",
+  "match": true
+ },
+ {
+  "repo": "Dongwei18416/Qwen3.8-27B-Q4_K_M-GGUF",
+  "file": "qwen3.8-27b-q4_k_m.gguf",
+  "match": true
+ },
+ {
+  "repo": "Arivukkarasu/Mistral-7B-Instruct-v0.3-GGUF",
+  "file": "Mistral-7B-Instruct-v0.3-Q4_K_M.gguf",
+  "match": true
+ },
+ {
+  "repo": "cmp-nct/Qwen3-8B-GGUF",
+  "file": "Qwen3-8B-Q4_K_M.gguf",
+  "match": true
+ }
+]

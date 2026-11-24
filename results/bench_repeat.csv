@@ -1,0 +1,13 @@
+run,group,n,correct,score,ci_low,ci_high,runaway,errors,format_errors,reasoning_items,tok_s_median,ref_worse,same_output,mcnemar_p,ref_better
+qwen3-8b__official__embedded,ALL,300,276,0.92,0.8837,0.9457,4,0,0,0,241.3,,,,
+qwen3-8b__official__embedded,bfcl,60,59,0.9833,0.9114,0.9971,0,0,0,0,236.4,,,,
+qwen3-8b__official__embedded,gsm8k,100,98,0.98,0.93,0.9945,1,0,0,0,243.1,,,,
+qwen3-8b__official__embedded,ifeval,100,81,0.81,0.7222,0.8749,3,0,0,0,243.0,,,,
+qwen3-8b__official__embedded,multiturn,20,18,0.9,0.699,0.9721,0,0,0,0,239.8,,,,
+qwen3-8b__official__embedded,toolresult,20,20,1.0,0.8389,1.0,0,0,0,0,237.8,,,,
+qwen3-8b__official__repeat,ALL,300,276,0.92,0.8837,0.9457,4,0,0,0,242.9,0,0.8,1.0,0
+qwen3-8b__official__repeat,bfcl,60,59,0.9833,0.9114,0.9971,0,0,0,0,236.4,0,0.0,1.0,0
+qwen3-8b__official__repeat,gsm8k,100,98,0.98,0.93,0.9945,1,0,0,0,244.0,0,1.0,1.0,0
+qwen3-8b__official__repeat,ifeval,100,81,0.81,0.7222,0.8749,3,0,0,0,243.8,0,1.0,1.0,0
+qwen3-8b__official__repeat,multiturn,20,18,0.9,0.699,0.9721,0,0,0,0,239.7,0,1.0,1.0,0
+qwen3-8b__official__repeat,toolresult,20,20,1.0,0.8389,1.0,0,0,0,0,237.2,0,1.0,1.0,0

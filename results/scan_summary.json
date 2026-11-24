@@ -1,0 +1,563 @@
+{
+ "all": {
+  "Qwen/Qwen3-8B": {
+   "uploads": 270,
+   "downloads_30d": 1307228,
+   "class_count": {
+    "stale": 97,
+    "same": 146,
+    "differs": 15,
+    "no_template": 12
+   },
+   "class_download_share": {
+    "stale": 0.8189129975796112,
+    "same": 0.17280688602141325,
+    "differs": 0.0060632116203141306,
+    "no_template": 0.002216904778661412
+   },
+   "uploads_with_new_errors": 106,
+   "download_share_with_new_errors": 0.8209371280296933,
+   "scenario_errors": {
+    "null_content_call": 105,
+    "tool_result": 1,
+    "parallel_calls": 1,
+    "string_args_call": 1
+   },
+   "scenario_diffs": {
+    "null_content_call": 112,
+    "plain": 13,
+    "system": 10,
+    "multi_turn": 11,
+    "tools": 13,
+    "system_tools": 11,
+    "tool_result": 14,
+    "history_thinking": 15,
+    "reasoning_field": 14,
+    "string_args_call": 14,
+    "parallel_calls": 14,
+    "thinking_off": 8
+   },
+   "eos_mismatch": 3,
+   "unique_templates": 21,
+   "official_uploads": [
+    [
+     "Qwen/Qwen3-8B-GGUF",
+     "stale:2025-04-28",
+     "null_content_call"
+    ]
+   ]
+  },
+  "ALL": {
+   "uploads": 1788,
+   "downloads_30d": 38225819,
+   "class_count": {
+    "stale": 177,
+    "same": 1357,
+    "differs": 138,
+    "no_template": 108,
+    "whitespace": 8
+   },
+   "class_download_share": {
+    "stale": 0.057483634294401904,
+    "same": 0.7563324150098655,
+    "differs": 0.07059759792196997,
+    "no_template": 0.08969830051254102,
+    "whitespace": 0.025888052261221664
+   },
+   "uploads_with_new_errors": 162,
+   "download_share_with_new_errors": 0.030907329938437682,
+   "scenario_errors": {
+    "null_content_call": 160,
+    "tool_result": 45,
+    "parallel_calls": 46,
+    "string_args_call": 45,
+    "system": 36,
+    "multi_turn": 36,
+    "system_tools": 36,
+    "thinking_off": 36,
+    "plain": 3,
+    "tools": 3,
+    "history_thinking": 3,
+    "reasoning_field": 3
+   },
+   "scenario_diffs": {
+    "null_content_call": 289,
+    "plain": 133,
+    "system": 185,
+    "multi_turn": 188,
+    "tools": 199,
+    "system_tools": 185,
+    "tool_result": 217,
+    "history_thinking": 147,
+    "reasoning_field": 145,
+    "string_args_call": 202,
+    "parallel_calls": 217,
+    "thinking_off": 161
+   },
+   "eos_mismatch": 30,
+   "unique_templates": 90,
+   "official_uploads": [
+    [
+     "Qwen/Qwen3-8B-GGUF",
+     "stale:2025-04-28",
+     "null_content_call"
+    ],
+    [
+     "Qwen/Qwen2.5-7B-Instruct-GGUF",
+     "stale:2024-09-18",
+     ""
+    ]
+   ]
+  },
+  "Qwen/Qwen3.8-27B": {
+   "uploads": 813,
+   "downloads_30d": 33980006,
+   "class_count": {
+    "same": 691,
+    "no_template": 51,
+    "differs": 64,
+    "whitespace": 7
+   },
+   "class_download_share": {
+    "same": 0.8097624820902033,
+    "no_template": 0.10064512643111363,
+    "differs": 0.0604869816679844,
+    "whitespace": 0.02910540981069868
+   },
+   "uploads_with_new_errors": 1,
+   "download_share_with_new_errors": 1.3243081828767187e-06,
+   "scenario_errors": {
+    "null_content_call": 1
+   },
+   "scenario_diffs": {
+    "plain": 63,
+    "system": 69,
+    "multi_turn": 70,
+    "tools": 64,
+    "system_tools": 63,
+    "tool_result": 64,
+    "thinking_off": 47,
+    "history_thinking": 64,
+    "reasoning_field": 63,
+    "null_content_call": 64,
+    "string_args_call": 49,
+    "parallel_calls": 64
+   },
+   "eos_mismatch": 0,
+   "unique_templates": 33,
+   "official_uploads": []
+  },
+  "Qwen/Qwen2.5-7B-Instruct": {
+   "uploads": 280,
+   "downloads_30d": 1304072,
+   "class_count": {
+    "stale": 19,
+    "same": 216,
+    "differs": 11,
+    "no_template": 34
+   },
+   "class_download_share": {
+    "stale": 0.6831562981185088,
+    "same": 0.3061709782895423,
+    "differs": 0.008142188468121392,
+    "no_template": 0.0025305351238275185
+   },
+   "uploads_with_new_errors": 5,
+   "download_share_with_new_errors": 0.00701725058125625,
+   "scenario_errors": {
+    "null_content_call": 5
+   },
+   "scenario_diffs": {
+    "tools": 30,
+    "system_tools": 25,
+    "tool_result": 30,
+    "null_content_call": 30,
+    "string_args_call": 30,
+    "parallel_calls": 30,
+    "plain": 11,
+    "history_thinking": 11,
+    "reasoning_field": 11,
+    "system": 1,
+    "multi_turn": 1,
+    "thinking_off": 1
+   },
+   "eos_mismatch": 5,
+   "unique_templates": 11,
+   "official_uploads": [
+    [
+     "Qwen/Qwen2.5-7B-Instruct-GGUF",
+     "stale:2024-09-18",
+     ""
+    ]
+   ]
+  },
+  "mistralai/Mistral-7B-Instruct-v0.3": {
+   "uploads": 195,
+   "downloads_30d": 107659,
+   "class_count": {
+    "stale": 40,
+    "differs": 13,
+    "same": 137,
+    "no_template": 5
+   },
+   "class_download_share": {
+    "stale": 0.7934218226065634,
+    "differs": 0.13191651417902822,
+    "same": 0.07375138167733306,
+    "no_template": 0.0009102815370753954
+   },
+   "uploads_with_new_errors": 50,
+   "download_share_with_new_errors": 0.9205918687708413,
+   "scenario_errors": {
+    "system": 36,
+    "multi_turn": 36,
+    "system_tools": 36,
+    "tool_result": 44,
+    "thinking_off": 36,
+    "null_content_call": 49,
+    "string_args_call": 44,
+    "parallel_calls": 45,
+    "plain": 3,
+    "tools": 3,
+    "history_thinking": 3,
+    "reasoning_field": 3
+   },
+   "scenario_diffs": {
+    "plain": 37,
+    "system": 48,
+    "multi_turn": 49,
+    "tools": 52,
+    "system_tools": 52,
+    "tool_result": 52,
+    "thinking_off": 48,
+    "history_thinking": 38,
+    "reasoning_field": 38,
+    "null_content_call": 52,
+    "string_args_call": 52,
+    "parallel_calls": 52
+   },
+   "eos_mismatch": 5,
+   "unique_templates": 14,
+   "official_uploads": []
+  },
+  "microsoft/Phi-4-mini-instruct": {
+   "uploads": 126,
+   "downloads_30d": 292466,
+   "class_count": {
+    "same": 122,
+    "whitespace": 1,
+    "no_template": 2,
+    "differs": 1
+   },
+   "class_download_share": {
+    "same": 0.9968816888116909,
+    "whitespace": 0.002017328509980647,
+    "no_template": 0.0007248705832472834,
+    "differs": 0.00037611209508113763
+   },
+   "uploads_with_new_errors": 0,
+   "download_share_with_new_errors": 0.0,
+   "scenario_errors": {},
+   "scenario_diffs": {
+    "plain": 2,
+    "system": 2,
+    "multi_turn": 2,
+    "tools": 2,
+    "system_tools": 2,
+    "tool_result": 2,
+    "thinking_off": 2,
+    "history_thinking": 2,
+    "reasoning_field": 2,
+    "string_args_call": 2,
+    "parallel_calls": 2
+   },
+   "eos_mismatch": 15,
+   "unique_templates": 4,
+   "official_uploads": []
+  },
+  "openai/gpt-oss-20b": {
+   "uploads": 104,
+   "downloads_30d": 1234388,
+   "class_count": {
+    "differs": 34,
+    "same": 45,
+    "stale": 21,
+    "no_template": 4
+   },
+   "class_download_share": {
+    "differs": 0.49453413351393566,
+    "same": 0.38159071539904793,
+    "stale": 0.12196246237001655,
+    "no_template": 0.0019126887169998413
+   },
+   "uploads_with_new_errors": 0,
+   "download_share_with_new_errors": 0.0,
+   "scenario_errors": {},
+   "scenario_diffs": {
+    "system": 55,
+    "multi_turn": 55,
+    "tool_result": 55,
+    "thinking_off": 55,
+    "null_content_call": 31,
+    "string_args_call": 55,
+    "parallel_calls": 55,
+    "tools": 38,
+    "system_tools": 32,
+    "plain": 7,
+    "history_thinking": 17,
+    "reasoning_field": 17
+   },
+   "eos_mismatch": 2,
+   "unique_templates": 12,
+   "official_uploads": []
+  }
+ },
+ "pure": {
+  "Qwen/Qwen3-8B": {
+   "uploads": 103,
+   "downloads_30d": 1257858,
+   "class_count": {
+    "stale": 51,
+    "same": 50,
+    "no_template": 1,
+    "differs": 1
+   },
+   "class_download_share": {
+    "stale": 0.8429735311935052,
+    "same": 0.15698910369850969,
+    "no_template": 2.623507581936912e-05,
+    "differs": 1.113003216579296e-05
+   },
+   "uploads_with_new_errors": 51,
+   "download_share_with_new_errors": 0.8429735311935052,
+   "scenario_errors": {
+    "null_content_call": 51
+   },
+   "scenario_diffs": {
+    "null_content_call": 52,
+    "plain": 1,
+    "system": 1,
+    "multi_turn": 1,
+    "tools": 1,
+    "system_tools": 1,
+    "tool_result": 1,
+    "history_thinking": 1,
+    "reasoning_field": 1,
+    "string_args_call": 1,
+    "parallel_calls": 1
+   },
+   "eos_mismatch": 1,
+   "unique_templates": 7,
+   "official_uploads": [
+    [
+     "Qwen/Qwen3-8B-GGUF",
+     "stale:2025-04-28",
+     "null_content_call"
+    ]
+   ]
+  },
+  "ALL": {
+   "uploads": 643,
+   "downloads_30d": 17838767,
+   "class_count": {
+    "stale": 104,
+    "same": 514,
+    "no_template": 9,
+    "differs": 16
+   },
+   "class_download_share": {
+    "stale": 0.11972172740414178,
+    "same": 0.8465076650196731,
+    "no_template": 7.657479914390944e-05,
+    "differs": 0.033694032777041145
+   },
+   "uploads_with_new_errors": 85,
+   "download_share_with_new_errors": 0.06409630217155704,
+   "scenario_errors": {
+    "null_content_call": 85,
+    "system": 30,
+    "multi_turn": 30,
+    "system_tools": 30,
+    "tool_result": 34,
+    "thinking_off": 30,
+    "string_args_call": 34,
+    "parallel_calls": 34
+   },
+   "scenario_diffs": {
+    "null_content_call": 110,
+    "plain": 24,
+    "system": 55,
+    "multi_turn": 55,
+    "tools": 58,
+    "system_tools": 56,
+    "tool_result": 69,
+    "history_thinking": 25,
+    "reasoning_field": 25,
+    "string_args_call": 69,
+    "parallel_calls": 69,
+    "thinking_off": 54
+   },
+   "eos_mismatch": 9,
+   "unique_templates": 28,
+   "official_uploads": [
+    [
+     "Qwen/Qwen3-8B-GGUF",
+     "stale:2025-04-28",
+     "null_content_call"
+    ],
+    [
+     "Qwen/Qwen2.5-7B-Instruct-GGUF",
+     "stale:2024-09-18",
+     ""
+    ]
+   ]
+  },
+  "Qwen/Qwen3.8-27B": {
+   "uploads": 188,
+   "downloads_30d": 13799703,
+   "class_count": {
+    "same": 183,
+    "no_template": 5
+   },
+   "class_download_share": {
+    "same": 0.9999460857961943,
+    "no_template": 5.39142038056906e-05
+   },
+   "uploads_with_new_errors": 0,
+   "download_share_with_new_errors": 0.0,
+   "scenario_errors": {},
+   "scenario_diffs": {},
+   "eos_mismatch": 0,
+   "unique_templates": 3,
+   "official_uploads": []
+  },
+  "Qwen/Qwen2.5-7B-Instruct": {
+   "uploads": 90,
+   "downloads_30d": 1209818,
+   "class_count": {
+    "stale": 10,
+    "same": 79,
+    "no_template": 1
+   },
+   "class_download_share": {
+    "stale": 0.7039372864348191,
+    "same": 0.29602799759963894,
+    "no_template": 3.4715965541924485e-05
+   },
+   "uploads_with_new_errors": 0,
+   "download_share_with_new_errors": 0.0,
+   "scenario_errors": {},
+   "scenario_diffs": {
+    "tools": 10,
+    "system_tools": 10,
+    "tool_result": 10,
+    "null_content_call": 10,
+    "string_args_call": 10,
+    "parallel_calls": 10
+   },
+   "eos_mismatch": 0,
+   "unique_templates": 2,
+   "official_uploads": [
+    [
+     "Qwen/Qwen2.5-7B-Instruct-GGUF",
+     "stale:2024-09-18",
+     ""
+    ]
+   ]
+  },
+  "mistralai/Mistral-7B-Instruct-v0.3": {
+   "uploads": 134,
+   "downloads_30d": 85512,
+   "class_count": {
+    "stale": 34,
+    "same": 100
+   },
+   "class_download_share": {
+    "stale": 0.9713022733651417,
+    "same": 0.028697726634858266
+   },
+   "uploads_with_new_errors": 34,
+   "download_share_with_new_errors": 0.9713022733651417,
+   "scenario_errors": {
+    "system": 30,
+    "multi_turn": 30,
+    "system_tools": 30,
+    "tool_result": 34,
+    "thinking_off": 30,
+    "null_content_call": 34,
+    "string_args_call": 34,
+    "parallel_calls": 34
+   },
+   "scenario_diffs": {
+    "plain": 20,
+    "system": 30,
+    "multi_turn": 30,
+    "tools": 34,
+    "system_tools": 34,
+    "tool_result": 34,
+    "thinking_off": 30,
+    "history_thinking": 20,
+    "reasoning_field": 20,
+    "null_content_call": 34,
+    "string_args_call": 34,
+    "parallel_calls": 34
+   },
+   "eos_mismatch": 0,
+   "unique_templates": 6,
+   "official_uploads": []
+  },
+  "microsoft/Phi-4-mini-instruct": {
+   "uploads": 88,
+   "downloads_30d": 283220,
+   "class_count": {
+    "same": 88
+   },
+   "class_download_share": {
+    "same": 1.0
+   },
+   "uploads_with_new_errors": 0,
+   "download_share_with_new_errors": 0.0,
+   "scenario_errors": {},
+   "scenario_diffs": {},
+   "eos_mismatch": 6,
+   "unique_templates": 2,
+   "official_uploads": []
+  },
+  "openai/gpt-oss-20b": {
+   "uploads": 40,
+   "downloads_30d": 1202656,
+   "class_count": {
+    "differs": 15,
+    "same": 14,
+    "stale": 9,
+    "no_template": 2
+   },
+   "class_download_share": {
+    "differs": 0.49976551898464733,
+    "same": 0.38282767474656093,
+    "stale": 0.11695197961844452,
+    "no_template": 0.00045482665034723144
+   },
+   "uploads_with_new_errors": 0,
+   "download_share_with_new_errors": 0.0,
+   "scenario_errors": {},
+   "scenario_diffs": {
+    "system": 24,
+    "multi_turn": 24,
+    "tool_result": 24,
+    "thinking_off": 24,
+    "null_content_call": 14,
+    "string_args_call": 24,
+    "parallel_calls": 24,
+    "tools": 13,
+    "system_tools": 11,
+    "plain": 3,
+    "history_thinking": 4,
+    "reasoning_field": 4
+   },
+   "eos_mismatch": 2,
+   "unique_templates": 8,
+   "official_uploads": []
+  }
+ }
+}

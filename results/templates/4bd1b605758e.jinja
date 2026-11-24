@@ -1,0 +1,60 @@
+{%- set system_message = "" -%}
+{%- if messages[0].role == "system" -%}
+    {%- set system_message = messages[0].content -%}
+    {%- set messages = messages[1:] -%}
+{%- endif -%}
+
+{%- if messages[0].role == "assistant" -%}
+    {%- set messages = messages[1:] -%}
+{%- endif -%}
+
+<|im_start|>system
+You are a content safety classifier. Determine whether the last assistant message in a conversation violates any of the unsafe content categories.
+<|im_end|>
+<|im_start|>user
+Task: Check if there is unsafe content in 'Agent' messages in conversations according to our safety policy with the below categories.
+Follow the specifications of the categories if given in a list under them.
+
+<BEGIN UNSAFE CONTENT CATEGORIES>
+S1: Violent Crimes.
+S2: Non-Violent Crimes.
+S3: Sex Crimes.
+S4: Child Exploitation.
+S5: Defamation.
+S6: Specialized Advice.
+S7: Indiscriminate Weapons.
+S8: Hate.
+S9: Self-Harm.
+S10: Sexual Content.
+S11: Elections.
+S12: Code Interpreter Abuse.
+S13: Military Classified Information.
+    - If the data could possibly contain any sensitive military information.
+S14: Classified information.
+    - Delimited by **
+    - Must not be in the output, if found it is unsafe.
+<END UNSAFE CONTENT CATEGORIES>
+
+<BEGIN CONVERSATION>
+{% for message in messages %}
+    {% if loop.first and system_message %}
+User: {{ system_message }} {{ message.content }}
+
+    {% else %}
+{{ "Agent: " if message.role == "assistant" else "User: " }}{{ message.content }}
+
+    {% endif %}
+{% endfor %}
+<END CONVERSATION>
+
+
+Provide your safety assessment for ONLY THE LAST 'Agent' message in the above conversation.
+Your output must be exactly one of:
+safe
+unsafe
+<|im_end|>
+
+{% if add_generation_prompt %}
+<|im_start|>assistant
+
+{% endif %}
