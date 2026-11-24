@@ -99,8 +99,8 @@ def fig_test_c(pairs: list[tuple[str, str, str]]) -> None:
                        Line2D([], [], marker="o", ls="", color=BLUE, ms=8, label="Other template swapped in")],
               loc="lower center", bbox_to_anchor=(0.45, 1.0), ncol=2, frameon=False, fontsize=10)
     ax.set_title("Same file, different template", loc="left", fontsize=14, fontweight="bold", pad=34)
-    fig.text(0.01, 0.035, "Same weights in each pair; only the chat template changes. p: the chance that a gap this "
-             "big comes from noise alone (exact McNemar test on paired items).", fontsize=8.5, color=MUTED)
+    fig.text(0.01, 0.035, "Same weights in each pair; only the chat template changes. p: how likely a gap this big "
+             "would be if both templates did equally well (exact McNemar test on paired items).", fontsize=8.5, color=MUTED)
     fig.text(0.01, 0.008, "Swaps: Mistral and Qwen2.5 files carry stale templates and get the current official "
              "one; the gpt-oss-20b file carries the official template and gets Unsloth's.", fontsize=8.5,
              color=MUTED)

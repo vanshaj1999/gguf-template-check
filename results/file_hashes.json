@@ -1,0 +1,72 @@
+[
+ {
+  "repo": "Qwen/Qwen3-8B-GGUF",
+  "downloads": 848856,
+  "file": "Qwen3-8B-Q4_K_M.gguf",
+  "sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+  "bytes": 5027783488
+ },
+ {
+  "repo": "unsloth/Qwen3-8B-GGUF",
+  "downloads": 176737,
+  "file": "Qwen3-8B-Q4_K_M.gguf",
+  "sha256": "120307ba529eb2439d6c430d94104dabd578497bc7bfe7e322b5d9933b449bd4",
+  "bytes": 5027784512
+ },
+ {
+  "repo": "MaziyarPanahi/Qwen3-8B-GGUF",
+  "downloads": 87597,
+  "file": "Qwen3-8B.Q4_K_M.gguf",
+  "sha256": "376902d50612ecfc5bd8b268f376c04d10ad7e480f99a1483b833f04344a549e",
+  "bytes": 5027783904
+ },
+ {
+  "repo": "bartowski/Qwen_Qwen3-8B-GGUF",
+  "downloads": 55027,
+  "file": "Qwen_Qwen3-8B-Q4_K_M.gguf",
+  "sha256": "54fffa050078e984116639c83dfb64b5aa6d4cd474e018b076777c632bbccccd",
+  "bytes": 5027784224
+ },
+ {
+  "repo": "lmstudio-community/Qwen3-8B-GGUF",
+  "downloads": 46234,
+  "file": "Qwen3-8B-Q4_K_M.gguf",
+  "sha256": "a7676d257b10f3ce23aedba45e64ba61a5aa295f0009d87c5627f6c026a8f35f",
+  "bytes": 5027783968
+ },
+ {
+  "repo": "Aldaris/Qwen3-8B-Q4_K_M-GGUF",
+  "downloads": 9771,
+  "file": "qwen3-8b-q4_k_m.gguf",
+  "sha256": "609eb8a9fb256d0e2be8b8d252b00bae7c0496fac5e9ccca190206abbb24e2e5",
+  "bytes": 5027783872
+ },
+ {
+  "repo": "geoffmunn/Qwen3-8B-f16",
+  "downloads": 5781,
+  "file": "Qwen3-8B-f16-imatrix:Q4_K_M.gguf",
+  "sha256": "c09d414416f245c8d20759d7629806aeb6250b5de3b2c159f37f9ac168d4b2b5",
+  "bytes": 5027784288
+ },
+ {
+  "repo": "mradermacher/Qwen3-8B-i1-GGUF",
+  "downloads": 1956,
+  "file": "Qwen3-8B.i1-Q4_K_M.gguf",
+  "sha256": "98ff48cf082f40b36ceedba186b9aac32c46626e85c49f65b11a2a005665359b",
+  "bytes": 5027784512
+ },
+ {
+  "repo": "eaddario/Qwen3-8B-GGUF",
+  "downloads": 1735,
+  "file": "Qwen3-8B-Q4_K_M.gguf",
+  "sha256": "006385fb39ebc75cd0dde67d26a82f2469cbb9801513269aa2390930ba3033fd",
+  "bytes": 4476798400
+ },
+ {
+  "repo": "second-state/Qwen3-8B-GGUF",
+  "downloads": 1479,
+  "file": "Qwen3-8B-Q4_K_M.gguf",
+  "sha256": "91ca31fa4b6d8759545c0fa98b81dfbbe236b18b040929d14deb18acaf3d27ef",
+  "bytes": 5027783424
+ }
+]

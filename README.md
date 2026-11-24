@@ -69,8 +69,8 @@ Share of the last 30 days' downloads (23 Nov 2026, clean repacks only) whose tem
 
 Then I ran the files on an RTX 5090 to see what the differences actually do:
 
-- **Same file, different template.** With the template inside it, lmstudio-community's Mistral 7B file didn't make a single tool call in 60 function-calling tasks. With the current official template swapped in, the same file called a tool in all 60, and got 55 right. The Qwen2.5 and gpt-oss template differences changed the wording of the replies but not a single right or wrong answer.
-- **Same label, different uploaders.** Eight Qwen3-8B Q4_K_M files from different uploaders scored between 91.0% and 92.3% over 300 tasks, against 92.7% for Qwen's Q8_0. That's within noise. Who made the file barely matters. Which template it carries can matter a lot.
+- **Same file, different template.** With the template inside it, lmstudio-community's Mistral 7B file didn't make a single tool call in 60 function-calling tasks, and over its 100 tasks it scored 12%. With the current official template swapped in, the same file called a tool in all 60, got 55 right, and scored 87%. The Qwen2.5 and gpt-oss template differences changed the wording of the replies but not a single right or wrong answer.
+- **Same label, different uploaders.** Eight Qwen3-8B Q4_K_M files from different uploaders scored between 91.0% and 92.3% over 300 tasks, against 92.7% for Qwen's Q8_0. None of those gaps is statistically significant. Who made the file barely matters. Which template it carries can matter a lot.
 
 ![Same file, different template](img/fig4_testc_templates.png)
 
@@ -92,6 +92,10 @@ python3 harness/analyse_engine.py --diffs
 
 # check the Hub API against real file headers (20 uploads, range requests only)
 python3 harness/gguf_header.py
+
+# the Qwen3-8B crash in the real libraries, and the ten file fingerprints
+uv run harness/check_libraries.py
+python3 harness/file_hashes.py
 
 # the benchmarks: start llama-server --jinja on a GPU machine first
 uv run harness/build_tasks.py
@@ -115,6 +119,9 @@ Benchmark settings: greedy decoding, fixed seed, thinking off, at most 2,048 tok
 | `harness/scan.py` | The scan, plus how "out of date" is decided |
 | `harness/engine_render.py` | The llama.cpp side, through `llama-server /apply-template` |
 | `harness/build_tasks.py`, `bench.py`, `grade.py` | Benchmark tasks, runner and grader (Wilson intervals, exact McNemar tests) |
+| `harness/check_libraries.py` | The null-content crash, reproduced in transformers and llama-cpp-python |
+| `harness/file_hashes.py` | SHA-256 of the ten most downloaded Qwen3-8B Q4_K_M files, from Hub metadata |
+| `tests/` | Offline tests for the checker: `uv run --with pytest --with jinja2 pytest -q` |
 | `results/` | Scan results, every template I found, rendered prompts and all benchmark replies |
 | `img/` | Charts |
 
