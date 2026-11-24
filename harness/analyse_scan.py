@@ -9,7 +9,8 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 def main() -> None:
-    rows = list(csv.DictReader(open(ROOT / "results" / "scan.csv")))
+    with open(ROOT / "results" / "scan.csv") as f:
+        rows = list(csv.DictReader(f))
     summary = {}
     for scope in ("all", "pure"):
         fams = defaultdict(list)

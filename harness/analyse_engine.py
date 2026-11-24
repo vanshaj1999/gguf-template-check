@@ -17,14 +17,15 @@ def is_err(s: str) -> bool:
 
 
 def main(show_diffs: bool) -> None:
-    rows = [r for r in csv.DictReader(open(ROOT / "results" / "scan.csv"))
-            if r["pure_repack"] == "True"]
+    with open(ROOT / "results" / "scan.csv") as f:
+        rows = [r for r in csv.DictReader(f)
+                if r["pure_repack"] == "True"]
     groups = defaultdict(lambda: defaultdict(list))
     for r in rows:
         groups[r["family"]][r["tpl_hash"]].append(r)
     summary = {}
     for fam, by_hash in groups.items():
-        cur_file = sorted((ROOT / "results" / "official" / fam.replace("/", "__")).glob("v*.jinja"))[-1]
+        cur_file = max((ROOT / "results" / "official" / fam.replace("/", "__")).glob("v*.jinja"))
         cur = json.loads((PROMPTS / f"{hashlib.sha1(cur_file.read_text().encode()).hexdigest()[:12]}.json"
                           ).read_text())
         total = sum(int(r["downloads"]) for rs in by_hash.values() for r in rs) or 1
@@ -32,15 +33,15 @@ def main(show_diffs: bool) -> None:
         for h, rs in by_hash.items():
             dl = sum(int(r["downloads"]) for r in rs)
             if not h:
-                for e in tally:
-                    tally[e]["no_template"] += dl
+                for counts in tally.values():
+                    counts["no_template"] += dl
                 continue
             got = json.loads((PROMPTS / f"{h}.json").read_text())
-            for e in tally:
+            for e, counts in tally.items():
                 crash = [s for s, v in got[e].items() if is_err(v) and not is_err(cur[e][s])]
                 diff = [s for s, v in got[e].items() if not is_err(v) and v != cur[e][s]]
                 state = "crash" if crash else "different" if diff else "same"
-                tally[e][state] += dl
+                counts[state] += dl
                 if show_diffs and e == "llama" and diff and dl > 1000:
                     s = diff[0]
                     print(f"\n{fam} {h} dl={dl} llama differs in {diff}")

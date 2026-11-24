@@ -19,8 +19,9 @@ def q4_file(repo: str) -> dict | None:
 
 
 def main() -> None:
-    rows = [r for r in csv.DictReader(open(ROOT / "results" / "scan.csv"))
-            if r["family"] == "Qwen/Qwen3-8B" and r["pure_repack"] == "True"]
+    with open(ROOT / "results" / "scan.csv") as f:
+        rows = [r for r in csv.DictReader(f)
+                if r["family"] == "Qwen/Qwen3-8B" and r["pure_repack"] == "True"]
     rows.sort(key=lambda r: int(r["downloads"]), reverse=True)
     out = []
     for r in rows:

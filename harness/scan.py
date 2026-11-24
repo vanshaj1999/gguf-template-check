@@ -25,7 +25,7 @@ FAMILIES = [
 QUANT_WORDS = re.compile(
     r"gguf|imatrix|i1|i-?quants?|quant(ized|s)?|[iq]?q\d(_[a-z0-9]+)*|iq\d\w*|bf16|fp16|f16|f32|"
     r"[0-9.]+bits?|bits?|ud|static|weighted|llamacpp|llama\.cpp|ollama|lmstudio|gsq|rco|autoround|"
-    r"awq|gptq|mxfp4|nvfp4|fp8|int[48]|w[48]a\d+", re.I)
+    r"awq|gptq|mxfp4|nvfp4|fp8|int[48]|w[48]a\d+", re.IGNORECASE)
 OUT = Path(__file__).resolve().parent.parent / "results"
 
 

@@ -26,7 +26,7 @@ Checking  Qwen/Qwen3-8B-GGUF
 Base      Qwen/Qwen3-8B
 Official  2 template version(s), the current one from 2025-05-19
 
-Result    OUT OF DATE. It carries the official template from 2025-04-28.
+Result    OUT OF DATE. It matches the official template from 2025-04-28.
           Qwen/Qwen3-8B has changed it since then (latest change 2025-05-19).
 
 Test conversation                    This file vs current official

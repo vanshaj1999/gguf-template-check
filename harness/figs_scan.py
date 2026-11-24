@@ -72,8 +72,9 @@ def fig_engines() -> None:
 
 
 def fig_timeline() -> None:
-    rows = [r for r in csv.DictReader(open(ROOT / "results" / "scan.csv"))
-            if r["family"] == "Qwen/Qwen3-8B" and r["pure_repack"] == "True" and r["tpl_hash"]]
+    with open(ROOT / "results" / "scan.csv") as f:
+        rows = [r for r in csv.DictReader(f)
+                if r["family"] == "Qwen/Qwen3-8B" and r["pure_repack"] == "True" and r["tpl_hash"]]
     rng = random.Random(7)
     fig, ax = plt.subplots(figsize=(11, 4.2))
     ys = {"stale": 1, "same": 0}

@@ -7,7 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-import check_template as ct  # noqa: E402
+import check_template as ct
 
 OFFICIAL = ROOT / "results" / "official"
 
@@ -41,6 +41,12 @@ def test_old_qwen3_template_fails_on_null_content():
     old = history("Qwen__Qwen3-8B", eos="<|im_end|>")[0]["renders"]
     assert ct.is_error(old["null_content_call"])
     assert not ct.is_error(old["tool_result"])
+
+
+def test_old_mistral_template_drops_tools():
+    versions = history("mistralai__Mistral-7B-Instruct-v0.3", "<s>", "</s>")
+    old, cur = versions[0]["renders"], versions[-1]["renders"]
+    assert ct.compare(old["tools"], cur["tools"], "tools") == "TOOLS DROPPED"
 
 
 def test_compare_labels():

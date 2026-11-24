@@ -15,10 +15,10 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent / "harness"))
 
-import hub  # noqa: E402
-from gguf_header import NeedMore, Reader  # noqa: E402
-from render import SCENARIOS, render_all, squash  # noqa: E402
-from scan import classify, official_versions  # noqa: E402
+import hub
+from gguf_header import NeedMore, Reader
+from render import SCENARIOS, render_all, squash
+from scan import classify, official_versions
 
 LABELS = {
     "plain": "plain question",
@@ -75,13 +75,15 @@ def hub_template(repo: str) -> tuple[str | None, str, str, list[str]]:
     return gguf.get("chat_template"), gguf.get("bos_token") or "", gguf.get("eos_token") or "", bases
 
 
-def compare(mine: str, ref: str) -> str:
+def compare(mine: str, ref: str, chat: str = "") -> str:
     if mine == ref or (is_error(mine) and is_error(ref)):
         return "same"
     if is_error(mine):
         return "FAILS: " + mine.split(":", 1)[-1].strip()[:60]
     if is_error(ref):
         return "works (official one fails)"
+    if chat in TOOL_CHATS and "get_weather" in ref and "get_weather" not in mine:
+        return "TOOLS DROPPED"
     if squash(mine) == squash(ref):
         return "whitespace only"
     return "different prompt"
@@ -119,7 +121,7 @@ def main() -> int:
     if verdict == "same":
         print("Result    UP TO DATE. It builds the same prompt as the current official template.")
     elif verdict.startswith("stale:"):
-        print(f"Result    OUT OF DATE. It carries the official template from {verdict[6:]}.")
+        print(f"Result    OUT OF DATE. It matches the official template from {verdict[6:]}.")
         print(f"          {base} has changed it since then (latest change {current['date']}).")
     elif verdict == "whitespace":
         print("Result    WHITESPACE ONLY. Same prompt apart from spaces and line breaks.")
@@ -127,16 +129,19 @@ def main() -> int:
         print("Result    DIFFERENT. It matches no official version, so someone edited it.")
 
     print(f"\n{'Test conversation':36} This file vs current official")
-    rows = {s: compare(mine[s], current["renders"][s]) for s in SCENARIOS}
+    rows = {s: compare(mine[s], current["renders"][s], s) for s in SCENARIOS}
     for s, status in rows.items():
         print(f"  {LABELS[s]:34} {status}")
 
     fails = [s for s, st in rows.items() if st.startswith("FAILS")]
+    dropped = [s for s, st in rows.items() if st == "TOOLS DROPPED"]
     tool_diff = [s for s, st in rows.items() if s in TOOL_CHATS and st == "different prompt"]
-    if fails or tool_diff:
+    if fails or tool_diff or dropped:
         print("\nWhat it means")
         if fails:
             print("  Python apps (transformers, llama-cpp-python) will raise an error on the FAILS chats.")
+        if dropped:
+            print("  The tool definitions never reach the model, so it can't call your tools.")
         if tool_diff:
             print("  Tool calls get a different prompt. Test tool use before you rely on it.")
         print("  llama.cpp has its own template engine and patches some gaps, so check there with")

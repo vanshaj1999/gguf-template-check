@@ -13,7 +13,7 @@ from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-TASKS = {json.loads(line)["id"]: json.loads(line) for line in open(ROOT / "data" / "tasks.jsonl")}
+TASKS = {json.loads(line)["id"]: json.loads(line) for line in (ROOT / "data" / "tasks.jsonl").read_text().splitlines()}
 
 
 def wilson(k: int, n: int, z: float = 1.96) -> tuple[float, float]:
@@ -166,7 +166,9 @@ def grade_record(rec) -> dict:
         out["correct"] = (not first.get("tool_calls")) and any(e in text for e in task["expect_any"])
     elif rec["group"] == "bfcl":
         out["correct"], out["format_error"] = grade_bfcl(task, first)
-        out["content"] = json.dumps(first.get("tool_calls")) + first.get("content", "")
+        # Tool call ids are random on every run, so they stay out of the reply comparison.
+        calls = [{k: v for k, v in c.items() if k != "id"} for c in first.get("tool_calls") or []]
+        out["content"] = json.dumps(calls) + first.get("content", "")
     else:
         out["correct"] = grade_multiturn(task, turns)
         out["content"] = "\n---\n".join(t.get("content", "") for t in turns)

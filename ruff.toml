@@ -1,0 +1,2 @@
+line-length = 120
+extend-exclude = ["harness/instruction_following_eval"]

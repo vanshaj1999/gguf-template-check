@@ -76,7 +76,8 @@ def llama_render(tpl_path: Path) -> dict[str, str]:
 
 
 def main() -> None:
-    rows = list(csv.DictReader(open(ROOT / "results" / "scan.csv")))
+    with open(ROOT / "results" / "scan.csv") as f:
+        rows = list(csv.DictReader(f))
     by_hash: dict[str, dict] = {}
     users = defaultdict(list)
     for r in rows:

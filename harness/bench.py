@@ -69,7 +69,7 @@ def main() -> None:
     a = ap.parse_args()
     extra = json.loads(a.extra)
     groups = a.groups.split(",")
-    tasks = [json.loads(line) for line in open(ROOT / "data" / "tasks.jsonl")]
+    tasks = [json.loads(line) for line in (ROOT / "data" / "tasks.jsonl").read_text().splitlines()]
     tasks = [t for t in tasks if t["group"] in groups]
     if a.limit:
         kept, count = [], {}
@@ -80,7 +80,7 @@ def main() -> None:
         tasks = kept
     out = ROOT / "results" / "bench" / f"{a.run}.jsonl"
     out.parent.mkdir(parents=True, exist_ok=True)
-    done = {json.loads(line)["id"] for line in open(out)} if out.exists() else set()
+    done = {json.loads(line)["id"] for line in out.read_text().splitlines()} if out.exists() else set()
     with open(out, "a") as f:
         for i, t in enumerate(tasks):
             if t["id"] in done:

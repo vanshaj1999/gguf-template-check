@@ -10,16 +10,17 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-from render import SCENARIOS, render_all
+from render import render_all
 
 ROOT = Path(__file__).resolve().parent.parent
 
 
 def main(family: str, max_lines: int = 14) -> None:
-    rows = [r for r in csv.DictReader(open(ROOT / "results" / "scan.csv"))
-            if r["family"] == family and r["pure_repack"] == "True" and r["tpl_hash"]]
+    with open(ROOT / "results" / "scan.csv") as f:
+        rows = [r for r in csv.DictReader(f)
+                if r["family"] == family and r["pure_repack"] == "True" and r["tpl_hash"]]
     fam_dir = ROOT / "results" / "official" / family.replace("/", "__")
-    official = sorted(fam_dir.glob("v*.jinja"))[-1].read_text()
+    official = max(fam_dir.glob("v*.jinja")).read_text()
     eos = rows[0]["eos"] if rows else ""
     cur = render_all(official, "", eos)
     groups = defaultdict(list)

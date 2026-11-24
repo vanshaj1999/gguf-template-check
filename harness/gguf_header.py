@@ -84,8 +84,9 @@ def pick_file(repo: str) -> str | None:
 
 
 def main() -> None:
-    rows = [r for r in csv.DictReader(open(ROOT / "results" / "scan.csv"))
-            if r["pure_repack"] == "True" and r["tpl_hash"]]
+    with open(ROOT / "results" / "scan.csv") as f:
+        rows = [r for r in csv.DictReader(f)
+                if r["pure_repack"] == "True" and r["tpl_hash"]]
     must = {"Qwen/Qwen3-8B-GGUF", "unsloth/Qwen3-8B-GGUF", "Qwen/Qwen2.5-7B-Instruct-GGUF",
             "lmstudio-community/Mistral-7B-Instruct-v0.3-GGUF", "ggml-org/gpt-oss-20b-GGUF",
             "unsloth/gpt-oss-20b-GGUF"}
